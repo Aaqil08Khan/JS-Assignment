@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PersonProp</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        input {
+            width: 300px;
+            padding: 10px;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 10px 15px;
+            font-size: 16px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        p {
+            font-size: 18px;
+            color: #555;
+        }
+    </style>
+  </head>
+  <body>
+    <h1>Get your Details</h1>
+
+    <!-- Input fields -->
+    <label>Your Name: </label>
+    <input type="text" id="name" /><br /><br />
+
+    <label>Your Age: </label>
+    <input type="text" id="age" /><br /><br />
+
+    <label>Your Address: </label>
+    <input type="text" id="address" /><br /><br />
+
+    <!-- Button -->
+    <button id="submitBtn">Show My Details</button>
+
+    <!-- Result section -->
+    <h3>Your Details:</h3>
+    <p id="result"></p>
+
+     <script>
+    // Handle button click
+    document.getElementById("submitBtn").addEventListener("click", function() {
+      // Get values from inputs
+      let name = document.getElementById("name").value;
+      let age = document.getElementById("age").value;
+      let address = document.getElementById("address").value;
+
+      // Create person object
+      let person = {
+        name: name,
+        age: age,
+        address: address
+      };
+
+      // Display result on page
+      document.getElementById("result").textContent =
+        `You entered: ${person.name} ${person.age} years (${person.address})`;
+    });
+  </script>
+  </body>
+</html>

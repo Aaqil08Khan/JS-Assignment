@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Capitalize</title>
+    <style>
+      h2 {
+        text-align: center;
+        color: #333;
+      }
+      input {
+        width: 300px;
+        padding: 10px;
+        font-size: 16px;
+      }
+      #output {
+        display: inline-block;
+        min-width: 300px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Capitalize each word!</h2>
+    <!-- input field -->
+    <input type="text" id="userinput" placeholder="type something..." />
+
+    <!-- Output label -->
+    <p>Result: <span id="output"></span></p>
+    <script>
+      // get input and output elements
+      let inputBox = document.getElementById("userinput");
+      let outputBox = document.getElementById("output");
+
+      // listen for user typing
+      inputBox.addEventListener("input", function () {
+        let text = inputBox.value;
+
+        // capitalize each word
+        let capitalized = text
+          .split(" ") // break into words
+          .map((word) => word.charAt(0).toUpperCase() + word.slice(1)) // capitalize
+          .join(" "); // join back into a string
+
+        // show on screen
+        output.textContent = capitalized;
+      });
+
+    //   let sentence = "hello! how are you doing?";
+
+    //   let words = sentence.split(" ");
+    //   let result = "";
+
+    //   for (let i = 0; i < words.length; i++) {
+    //     let word = words[i];
+
+    //     if (word.length > 0) {
+    //       let capitalizedWord = word.charAt(0).toUpperCase() + word.slice(1);
+    //       result += capitalizedWord + " ";
+    //     }
+    //   }
+
+    //   console.log(result.trim());
+    </script>
+  </body>
+</html>

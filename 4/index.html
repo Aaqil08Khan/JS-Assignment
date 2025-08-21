@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CarProps</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        input {
+            width: 300px;
+            padding: 10px;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 10px 15px;
+            font-size: 16px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        p {
+            font-size: 18px;
+            color: #555;
+        }
+    </style>
+  </head>
+  <body>
+    <h1>Get Car Details</h1>
+
+    <!-- Input fields -->
+    <label>Car Make (Brand): </label>
+    <input type="text" id="make" /><br /><br />
+
+    <label>Car Model: </label>
+    <input type="text" id="model" /><br /><br />
+
+    <label>Car Year: </label>
+    <input type="number" id="year" /><br /><br />
+
+    <!-- Button -->
+    <button id="submitBtn">Show Car Details</button>
+
+    <!-- Result section -->
+    <h3>Car Details:</h3>
+    <p id="result"></p>
+
+     <script>
+    // Handle button click
+    document.getElementById("submitBtn").addEventListener("click", function() {
+      // Get values from inputs
+      let make = document.getElementById("make").value;
+      let model = document.getElementById("model").value;
+      let year = document.getElementById("year").value;
+
+      // Create car object
+      let car = {
+        make: make,
+        model: model,
+        year: year
+      };
+
+      // Display result on page
+      document.getElementById("result").textContent =
+        `You entered: ${car.make} ${car.model} (${car.year})`;
+    });
+  </script>
+  </body>
+</html>

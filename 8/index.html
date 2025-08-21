@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sum of all the numbers in an array</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        input {
+            padding: 10px;
+            font-size: 16px;
+            width: 300px;
+            display: block;
+            margin: 0 auto 10px auto;
+        }
+        button {
+            padding: 10px 15px;
+            font-size: 16px;
+            display: block;
+            margin: 0 auto;
+        }
+        p {
+            font-size: 18px;
+            color: #555;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sum of all the numbers in an array using for loop</h1>
+    <input type="text" id="inputArray" placeholder="Enter numbers separated by commas">
+    <button id="calculateSum">Calculate Sum</button>
+    <p id="result"></p>
+    <script>
+        document.getElementById("calculateSum").addEventListener("click", function() {
+            let input = document.getElementById("inputArray").value;
+            let numbers = input.split(",").map(Number);
+            let sum = 0;
+
+            for (let i = 0; i < numbers.length; i++) {
+                sum += numbers[i];
+            }
+
+            document.getElementById("result").textContent = "Sum of the array: " + sum;
+        });
+    </script>
+</body>
+</html>
